@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/background.png
+    해당 링크에서 배경화면의 이미지 background.png 다운
+
+    body 태그 스타일링
+  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 이서윤체 폰트 적용을 위한 코드 */
+        @font-face {
+          font-family: "LeeSeoyun";
+          src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+            format("woff");
+          font-weight: normal;
+          font-style: normal;
+        }
+        /* body태그 자체에 css 요소 부여 */
+        /* body는 웹페이지 전체의 몸통, margin은 영역 바깥을 남길것인지 */
+        /* 가운대 정렬함 */
+        body {
+          font-family: "LeeSeoyun";
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          background-image: url("./background.png");
+        }
+        /* 전체적인 내용물은 container에서 들어감, body tag의 높이만큼 */
+        .container {
+          width : 390px;
+          background-color: #ff9d73;
+          height : 100%;
+        }
+        /* 사진영역 스타일링(photos) 위로부터 30px 떨어짐 */
+        .photos {
+          margin-top : 30px;
+        }
+        /* photo-frame 변경해보자 */
+        .photo-frame {
+          background-color : white;
+          margin : 15px 20px;
+          height : 200px;
+          /* 공통이니 여기에 적용(사진 크기 조절) */
+          background-size: cover;
+          /* photoframe 밑에 있는 desc가 어디에 위치할지 */
+          position : relative;
+        }
+        /* column 해야 행별로 각각 들어감*/
+        .footer {
+          display : flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        /* f-title과 f-date에도 스타일 적용 */
+        .f-title {
+        font-size: 25px;
+        font-weight: 900;
+        color: white;
+        }
+        .f-date {
+          font-size: 15px;
+          font-weight: 500;
+          color: white;
+        }
+        /* 이미지를 넣어보자, cover옵션으로 사이즈 맞게 */
+        #image1 {
+          background-image: url('./mudo4.png');
+        }
+        #image2 {
+          background-image: url('./mudo1.png');
+        }
+        #image3 {
+          background-image: url('./mudo3.png');
+        }
+        #image4 {
+          background-image: url('./mudo2.png');
+        }
+        /* desc1 ~ desc4에 설명 넣어보자 */
+        .photo-description{
+          color : white;
+          background-color: black;
+          
+          width : fit-content;
+          padding : 0 20px;
+          margin-bottom : 10px;
+          /* 둥글게 */
+          border-radius: 10px;
+
+          /* div가 프레임 기준으로 밑에서 0 만큼 */
+          position: absolute;
+          bottom: 0;
+          transform: translate(-50%);
+          left: 50%;
+        }
+        /* desc1 ~ desc4을 사진 가운데 밑으로  */
+        /* >> photo-frame에 position : relative 추가  */
+        /* >> description에 추가 설정 필요  */
+	</style>
+</head>
+<body> 
+    <!-- 
+      class = container : 웹 사이트에서 큰 구조 담당
+        class = photos : 이미지 들어가는곳
+          사진 4개 들어가니까 image1~image4 추가
+          span 테그는 dib 안에서 작은 영역을 표시해주는 역할
+        class = footer : 아래 영역(4개 이미지 아래)
+          p태그 이용
+
+
+          span 아래에 이미지 설명 쓰면 나옴 
+    -->
+    <div class="container">
+      <div class="photos">
+        <div id="image1" class="photo-frame">
+          <span id="desc1" class="photo-description">
+          
+          </span> 
+        </div>
+        <div id="image2" class="photo-frame">
+          <span id="desc2" class="photo-description">
+           
+          </span>
+        </div>
+        <div id="image3" class="photo-frame">
+          <span id="desc3" class="photo-description">
+        
+          </span>
+        </div>
+        <div id="image4" class="photo-frame">
+          <span id="desc4" class="photo-description">
+        
+          </span>
+        </div>
+      </div>
+      <div class="footer">
+        <p class = "f-title">직장인 명수옹 네컷 - kkw </p>
+        <p class = "f-date">2023.02.07</p>
+      </div>
+    </div>
+</body>
+</html>
